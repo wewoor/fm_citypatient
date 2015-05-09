@@ -55,8 +55,9 @@ module.exports = {
     songsPagenate: function(page, params) {
         var deferred = require('q').defer();
         SongsService.count().then(function(total) {
+            console.log("total:" + total);
             page.total = total;
-            page.pages = Math.round(total / page.limit);
+            page.pages = Math.ceil(total / page.limit);
             Songs.find(params).paginate(page).exec(function(err, results) {
                 if (err) return err;
                 deferred.resolve({
