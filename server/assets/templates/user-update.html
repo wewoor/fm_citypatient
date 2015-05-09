@@ -1,0 +1,14 @@
+<div class="wrapper">
+    <h3>密码修改</h3>
+    <form id="from-update" ng-submit="update()">
+        <div class="form-group">
+            <label for="sName">密码</label>
+            <input type="password" ng-model="user.password" name="password" class="form-control"  placeholder="输入第一次">
+        </div>
+        <div class="form-group">
+            <label for="sAddr">确认密码</label>
+            <input type="password" ng-model="user.password1" name="confimPwd" class="form-control" placeholder="确认输入">
+        </div>
+        <button type="submit" class="btn btn-default">保存修改</button>
+    </form>
+</div>

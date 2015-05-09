@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html ng-app="myFm">
+<head>
+	<title>城市病人</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="styles/style.css">
+	<link rel="stylesheet" type="text/css" href="images/foundation-icons/foundation-icons.css" />
+	<script type="text/javascript" src="js/dependencies/angular.min.js"></script>
+	<script type="text/javascript" src="js/dependencies/calculator.js"></script>
+	<script type="text/javascript" src="js/dependencies/jquery.min.js"></script>
+	<script type="text/javascript" src="js/ui.js"></script>
+</head>
+	<body>
+		<div id="alert" class="alert">
+			<a class="alert-close fi-x-circle" href="javascript:alertClose();"></a>
+		</div>
+		<script type="text/javascript">
+			// Detect browser support audio
+			var myauido = document.createElement('audio');
+			if (!myauido.play) { // not support
+				myAlert('您当前的浏览器版本过低，无法为你正常播放节目，为了您的安全和体验，请您尽快升级浏览器到最新版本'+
+					'我们推荐您使用谷歌或者火狐浏览器'+
+				'<a target="_bank" href="https://www.mozilla.org/zh-CN/firefox/new/#">下载</a>');
+			}
+		</script>
+		<div id="Container" class="wrapper" ng-controller="PlayerController">
+			<div class="section">
+					<!-- <img class="fm-cover" src="../images/wallhaven-1.jpg" /> -->
+					<img class="fm-cover cover" ng-src="{{song.cover}}"/>
+					<div class="player-main">
+					<div class="title">
+						<label class="title-b" ng-bind="'VOL.'+song.id"></label> 
+						<span class="ti" ng-bind="song.name"></span>
+					</div>
+					<div class="au" ng-if="song.author_addr != ''">
+						<span style="margin-right: 40px;">
+							声:<a target="_blank" href="{{song.author_addr}}" ng-bind="song.announces"></a>
+						</span>
+
+						<span>文:<a target="_blank" href="{{song.author_addr}}" ng-bind="song.author"></a>
+						</span>
+						<p class="artcon" ng-bind="song.introduce | limitTo:90"></p>
+					</div>
+					<div class="player">
+						<!-- 播放控制 -->
+						<audio id="myPlayer" ng-init="init()" autoplay="autoplay">
+						</audio>
+						<!-- 循环/下一曲控制 -->
+						<a class="previous fi-rewind" ng-click="last()" title="上一首"></a>
+						<a class="play-or-stop fi-pause" title="暂停" id="PS" data-cur="play" ng-click="control()"></a>
+						<a class="next fi-fast-forward" ng-click="next()" title="下一首"></a>
+						<!-- 播放进度 -->
+						<div id="DurPro" class="progress-bar"></div>
+						<div id="CurPro" class="cur-progress"></div>
+					</div>
+					<div class="social">
+						<span class="counter fi-graph-bar" >
+							<label ng-bind="song.count"></label>次
+						</span>
+						<span class="btn-share fi-share" title="分享"></sapn>
+					</div>
+				</div>
+			</div>
+			<div id="ConList" class="con-list" ng-controller="SongsController">
+				<div class="list" id="SL" ng-init="init()">
+						<div ng-repeat="s in songs">
+							<a ng-if="$index == 1 || $index == 4" class="ca" ng-click="select(s.id)">
+								<img class="cover" ng-src="{{s.cover}}"/>
+								<span>
+									<label class="title2-b" ng-bind="'VOL.'+s.id "></label>
+									<label title="{{s.name}}" ng-bind="s.name"></label>
+								</span>
+							</a>
+							<a ng-if="$index !== 1 && $index !== 4" ng-click="select(s.id)">
+								<img class="cover" ng-src="{{s.cover}}"/>
+								<span>
+									<label class="title2-b" ng-bind="'VOL.'+s.id "></label>
+									<label title="{{s.name}}" ng-bind="s.name"></label>
+								</span>
+							</a>
+						</div>
+				</div>
+				<a class="page-last fi-rewind" ng-click="last()"></a>
+				<a class="page-next fi-fast-forward" ng-click="next()"></a>
+				<a class="page-close fi-x-circle"></a>
+				<span class="page-count">
+					<label ng-bind="page.page"></label>/<label ng-bind="page.pages"></label>
+				</span>
+			</div>
+			<div class="menu">
+				<a id="Menu" data-status="hide"><img src="images/fm1_03.png"/>节目列表</a>
+			</div>
+			<div class="about">
+				<p class="blod">©2014 <a>城市病人</a> All Rights Reserved!</p>
+				<p>Code by <a target="_blank" href="http://imziv.com">Ziv小威</a> & Designed by <a>解氏萱萱</a>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/services/PlayerService.js"></script>
+	<script type="text/javascript" src="js/controller/PlayerController.js"></script>
+	<script type="text/javascript" src="js/controller/SongsController.js"></script>
+</html>

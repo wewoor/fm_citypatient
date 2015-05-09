@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-cn" >
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>后台管理</title>
+    <script type="text/javascript" src="../js/dependencies/angular.min.js"></script>
+    <script type="text/javascript" src="../js/dependencies/angular-route.js"></script>
+    <script type="text/javascript" src="../js/dependencies/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/dependencies/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="../js/controller/UCenterController.js"></script>
+    <!-- Bootstrap -->
+    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../styles/jquery.dataTables.css" rel="stylesheet">
+    <link href="../styles/back.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+      .btn {
+        display: initial;
+      }
+    </style>
+  </head>
+  <body ng-app="ucenter">
+    <div class="container-fluid" ng-controller="SongController">
+      <div class="row bg-primary">
+          <div class="col-md-11"><h3>城市病人FM后台管理</h3></div>
+          <div class="col-md-1">
+            <h3>
+              <a class="btn btn-info" href="/user/logout">logout</a>
+            </h3>
+          </div>
+      </div>
+      <div class="row" style="padding-top:10px;">
+        <div class="col-md-2">
+          <div class="list-group">
+            <a href="#/" class="list-group-item">
+              文件列表
+            </a>
+            <a href="#/add" class="list-group-item">
+              添加文件
+            </a>
+            <a href="#/user/update" class="list-group-item">账号管理</a>
+          </div>
+        </div>
+        <div class="col-md-8" ng-init="init()" ng-view>
+
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,351 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Georgia, Hiragino Sans GB, \5b8b\4f53;
+    -webkit-font-smoothing: antialiased;
+    background: #e7ebec;
+}
+a {
+    cursor: pointer;
+    color: #10cc8f;
+}
+
+.alert {
+   position: absolute;
+    width: 50%;
+    right: 10px;
+    bottom: 20px;
+    background: rgb(31, 207, 150);
+    color: rgb(253, 255, 254);
+    padding: 10px;
+    display: none;
+    text-align: left;
+    border-radius: 3px;
+    opacity: 0.8;
+    z-index: 999;
+}
+
+
+.alert a {
+    color: rgb(0,0,0);
+}
+
+.alert .alert-close {
+    position: absolute;
+    right: -5px;
+    top: 1px;
+    color: #FFF;
+    width: 20px;
+    cursor: pointer;
+    height: 20px;
+    text-decoration: none;
+}
+
+.title-b, .title2-b,.counter {
+    font-family: "黑体";
+}
+
+.title-b {
+    color: #10cc8f;
+}
+
+.title2-b {
+    color: #10cc8f;
+}
+
+.logo {
+    position: fixed;
+    width: 200px;
+    height: 93px;
+    right: 20px;
+    bottom: 10px;
+    cursor: pointer;
+    background: url(../images/logo.png) center center no-repeat;
+}
+.wrapper {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    margin: auto;
+    text-align: center;
+}
+.section {
+    width: 100%;
+    height: 300px;
+    text-align: center;
+    background: #FFF;
+    border: 1px solid #e9eaec;
+    -moz-box-shadow: 0 0 10px 0 #ddd;
+    -webkit-box-shadow: 0 0 10px 0 #ddd;
+    box-shadow: 0 0 10px 0 #ddd;
+}
+.fm-cover {
+    float: left;
+    width: 300px;
+    height: 100%;
+}
+@-webkit-keyframes rotate {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+.anima-stop {
+    -webkit-animation-play-state: paused;
+    -moz-animation-play-state: paused;
+    -ms-animation-play-state: paused;
+    -o-animation-play-state: paused;
+    animation-play-state: paused;
+}
+.anima-play {
+    -webkit-animation-name: rotate;
+    -webkit-animation-duration: 10s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+}
+.player-main {
+    width: 300px;
+    float: right;
+    height: 300px;
+    text-align: left;
+}
+.artcon, .player-main p {
+    text-indent: 12px;
+    color: #424242;
+    font-size: 12px;
+    height: 110px;
+    float: left;
+    overflow: hidden;
+    line-height: 25px;
+    word-wrap: break-word;
+    word-break: break-all;
+    text-align: left;
+}
+.title {
+    height: 50px;
+}
+.title, .au {
+    float: right;
+    margin: 15px 15px 0 15px;
+    width: 270px;
+}
+.title span {
+    line-height: 25px;
+    text-align: left;
+}
+.au {
+    line-height: 25px;
+    font-size: 12px;
+    color: #999;
+    margin-top:0;
+    text-align: center;
+}
+.au a {
+    color: #69d5b1;
+    text-decoration: none;
+}
+.player {
+    float: right;
+    width: 270px;
+    height: 32px;
+    margin: 10px 15px 0 15px;
+}
+.btn-wrapper, .play-or-stop {
+    text-align: center;
+    width: 70px;
+}
+.btn-wrapper {
+    display: inherit;
+}
+.progress-bar, .cur-progress {
+    margin-top: 15px;
+    float: left;
+    height: 2px;
+}
+.progress-bar {
+    background: #f3f3f3;
+    width: 140px;
+}
+.cur-progress {
+    background: #9ce4cc;
+    width: 1px;
+    margin-top: -2px;
+}
+.play-or-stop, .next, .repeat, .previous {
+    font-size: 15px;
+    color: #9ce4cc;
+    display: inline-block;
+    border-radius: 50% 50%;
+    border: 1px solid #9ce4cc;
+    text-align: center;
+    float: left;
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+.play-or-stop:before, .next:before, .repeat:before, .previous:before {
+    margin-top: 8px;
+}
+
+.con-list .fi-fast-forward:before {
+    margin-left: 2px;
+    margin-top: 10px;
+}
+
+.con-list .fi-rewind:before {
+    margin-right: 2px;
+    margin-top: 10px;
+}
+
+.repeat {
+    top: 550px;
+    left: 125px;
+}
+.next {
+    top: 420px;
+    left: 110px;
+}
+.play-or-stop:hover, .next:hover, .repeat:hover, .previous:hover {
+    background: #288B5A;
+    color: #fff;
+    border-color: #288B5A;
+}
+.mode-repeat {
+    background: #288B5A;
+    color: #fff;
+    border: none;
+}
+.menu, .about {
+    margin-top: 90px;
+}
+
+.menu a {
+    font-size: 12px;
+    display: inline-block;
+    width: 50px;
+    height: 80px;
+    text-align: center;
+}
+.menu a img {
+    width: 45px;
+    height: 45px;
+}
+.about {
+    color: #c4c4c4;
+}
+.about p {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+}
+.about .blod {
+    font-size: 14px;
+}
+
+.about a {
+    text-decoration:none;
+}
+
+.social {
+    color: #c1c1c1;
+    font-size: 10px;
+    float: right;
+    padding: 15px 15px 0 20px;
+    width: 265px;
+}
+.social .btn-share {
+    float: right;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn-share:before {
+    margin-top: 4px;
+}
+.page-last, .page-next {
+    position: absolute;
+    width: 38px;
+    height: 38px;
+    font-size: 20px;
+    border-radius: 50% 50%;
+    border: 1.5px solid #2fc794;
+}
+
+.con-list {
+    width: 640px;
+    height: 450px;
+    position: absolute;
+    top: -999px;
+    background: #FFF;
+    border: 1px solid #e9eaec;
+    -moz-box-shadow: 0 0 10px 0 #ddd;
+    -webkit-box-shadow: 0 0 10px 0 #ddd;
+    box-shadow: 0 0 10px 0 #ddd;
+}
+.con-list .list {
+    display: inline-block;
+    width: 400px;
+    height: 400px;
+    margin-top: 45px;
+    text-align: center;
+}
+.con-list .list a {
+    background: #e7ebec;
+    width: 110px;
+    height: 165px;
+    margin-bottom: 10px;
+    float: left;
+    padding: 5px;
+}
+
+.list a img {
+    float: left;
+    height: 110px;
+    width: 100%;
+    border: none;
+}
+.list a span {
+    font-size: 12px;
+    color: #000100;
+    display: inline-block;
+    margin-top: 10px;
+    position: relative;
+    overflow: hidden;
+    width: 110px;
+    height: 36px;
+}
+.page-last {
+    background-position: 0 0;
+    left: 40px;
+    top: 203px;
+}
+.page-next {
+    background-position: 0 0;
+    right: 40px;
+    top: 203px;
+}
+
+.ca {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.page-count {
+    position: absolute;
+    bottom: 15px;
+    font-size: 14px;
+    color: #9b9b9b;
+    font-family: "黑体";
+    left: 308px;
+}
+.page-close {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    font-size: 25px;
+    top: 3px;
+    right: 0;
+    color: #e3e3e3;
+}

@@ -1,0 +1,16 @@
+.wrapper {
+    width: 800px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+.preview-img {
+    width: 200px;
+    height: 150px;
+    border: 1px solid #ddd;
+    padding: 5px;
+}
+
+.img-url {
+	margin-top: 15px;
+}

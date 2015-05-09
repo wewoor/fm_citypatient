@@ -1,0 +1,59 @@
+<div class="wrapper">
+    <h3>添加文件</h3>
+    <form id="from-add" ng-submit="add()">
+        <div class="form-group">
+            <label for="sName">名称</label>
+            <input type="text" ng-model="song.name" name="name" class="form-control" id="sName" placeholder="名称">
+        </div>
+        <div class="form-group">
+            <label for="sAddr">文件地址</label>
+            <input type="text" ng-model="song.addr" name="addr" class="form-control" id="sAddr" placeholder="文件地址">
+            <p class="help-block">此处存放歌曲的文件URL路径地址。</p>
+        </div>
+        <div class="form-group">
+            <label for="sIntro">节目简介</label>
+            <textarea class="form-control" id="sIntro" name="introduce" placeholder="歌曲简介" ng-model="song.introduce"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="sCover">界面封面</label>
+            <div class="row">
+              <div class="col-xs-4">
+                <img class="preview-img"  ng-src="{{song.cover}}" />
+              </div>
+              <div class="col-xs-9 img-url">
+                <input type="text" id="sCover" name="cover" class="form-control" ng-model="song.cover">
+              </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="sAuthor">文章作者</label>
+            <input type="text" id="sAuthor" name="author" class="form-control" ng-model="song.author">
+        </div>
+        <div class="form-group">
+            <label for="author_addr">作者连接地址</label>
+            <input type="text" id="author_addr" name="author_addr" class="form-control" ng-model="song.author_addr">
+        </div>
+        <div class="form-group">
+            <label for="sAnnounces">主播</label>
+            <input type="text" id="sAnnounces" name="announces" class="form-control" ng-model="song.announces">
+        </div>
+        <div class="form-group">
+            <label for="sAnnounces_addr">主播地址</label>
+            <input type="text" id="sAnnounces_addr" name="announces_addr" class="form-control" ng-model="song.announces_addr">
+        </div>
+        <div class="form-group">
+            <label for="s_online">是否上线</label>
+            <input id="s_online" value="0" name="online" type="checkbox" ng-model="song.online" checked >
+        </div>
+        <div class="form-group">
+            <label for="s_ct">分类</label>
+            <input class="form-control" name="ct" id="s_ct" ng-model="song.ct" type="text">
+        </div>
+        <div class="form-group">
+            <label for="s_content">内容</label>
+            <textarea id="s_content" ng-model="song.lyrics" name="lyrics" class="form-control"></textarea>
+            <p class="help-block">歌词或者文章正文。</p>
+        </div>
+        <button type="submit" class="btn btn-default">提交</button>
+    </form>
+</div>
